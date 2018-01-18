@@ -57,7 +57,7 @@ public class AddsTwoNumbers extends QuietAlgorithm {
 	}
 
 	public static void main(String[] args) {
-		GenSizes sizes = GenSizes.arithmetic(0, 10000, 500);
+		GenSizes sizes = GenSizes.arithmetic(0, 5000, 500);
 		ExecuteAlgorithm.timeAlgorithm(
 				"addstwonumbers", 
 				"studio0.allocates.AddsTwoNumbers", 

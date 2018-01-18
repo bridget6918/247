@@ -6,8 +6,8 @@ Students in your studio group:
 
     Name        Student ID (begins with a 4)
 	
-1.
-2.
+1.Bridget Wang	456190
+2.Sylvia Dai	456114
 3.
 4.
 5.
@@ -17,56 +17,73 @@ Below each question, type in your short, to-the-point answers.
 
 Question A1: 
 	What do you see in both plots? 
+	The two plots have very similar shape (quadratic curves).
 	Are there any differences between the two?
+	The ticks plot have much larger y values (ticks), and also it is a more smooth curve. 
+	The time curve is rather flat for the first 3 data-points, and then gets steeper.
 	What could account for those differences?
-	
+	It takes longer starting at n = 40000. While ticks are simply ^2 of n, time is not. 
 Discuss this (and all your responses for this assignment) with your TA as you go.
 
 Question A2:
 	Why do the times provided for Quadratic produce such a nice plot, while the original values of Linear did not?
-	
+	Because the times for linear are very low (constant growth with n). By using 2 loops, there are 
+	quadratic amount of work for the Quadratic algorithm. 
 Question A3: 
 	From the runs you have tried so far, how does the placement of ticker.tick() calls affect the plots you see? 
+	It affects times plots very time it is changed, but it only affects ticks once. 
 	In particular, do the changes affect the shapes of the curves, the values plotted, or both
+	Both shapes and the values for times, and only values for ticks. 
 	
 Question A4: 
 	In terms of n, how would you characterize, in the most simple terms, 
 	the time and ticks curves that have been generated so far?
+	ticks: number of operations, times: how long it takes to perform the number of operations
 		
 Question A5: 
 	What would happen if you deleted all ticker.tick() calls in the innermost loop,
 	while leaving other calls to ticker.tick() that you just placed in run()?
+	ticks become linear, while times remain quadratic.  
 	
 Question B1:
 	What do you see? How do the curves reflect the code inside AddsTwoNumbers?
+	I see that ticks is a flat line at 100000000. Time has fluctuations mostly around 110. 
 	Do you think the value of n matters here in terms of the time it takes to perform the operation?
 	Why or why not?
+	I don't think n matters here, because regardless of what n is, 
+	the for loop always uses a very large number of 100000000L. 
 	
 Question B2:
 	What do the data and plot tell you about the time it takes to allocate an array of n integers?
+	It is a linear line. So as n goes up, the time it takes to allocate an array of n int goes up. 
 	Is it reasonable to say that the line of code
 
  		this.array = new int[this.n]
  		
 	takes a constant amount of time, independent of the value of this.n?
+	No. In fact, this line of code relies solely on the value of this.n
 	
 Question B3:
 	Do the ticks agree in shape with the time we measured in running the Allocates code?
+	No. The ticks plot is a flat line. The time plot is roughly a linear function. 
 	
 Question B4:
-	Are the plots more similar to each other than before?
+	Are the plots more similar to each other than before? - Yes. 
 	What does this tell you about how much time it takes to allocate an array of n integers?
+	The time it takes to allocate an array of n int is roughly a linear function of n. 
 	
 Question B5:
 	Which group do you expect to finish first?
+	The tally mark team. 
 	Can you formalize, in terms of n the amount of work (ticks)
 	that each group must do to write n in the form required for that group?
-
+	decimal team: 1; tally mark team: n 
 	Both groups achieve the same result, namely the recording of an integer n.
 
 		Under what circumstances is the decimal notation more efficient than tally marks?
+		When you do not need to track how n changes. You only need to record the number. 
 		Under what circumstances is the tally mark notation more efficient than decimal notation?
-		
+		When n keeps changing and you will need to modify it every time. Tally mark tracks thee change of n. 		
 	If you are not sure, take a look the link from the assignment web page.
 	
 Question D1:
