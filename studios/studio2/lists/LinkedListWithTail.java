@@ -13,6 +13,8 @@ public class LinkedListWithTail<T> implements List<T> {
 	
 	private ListNode<T> head;
 	private Ticker ticker;
+	private ListNode<T> tail;
+	private int s;
 	
 	public LinkedListWithTail(Ticker ticker) {
 		this.head = null;   // nothing in our list yet
@@ -34,6 +36,8 @@ public class LinkedListWithTail<T> implements List<T> {
 			ListNode<T> p = new ListNode<T>();
 			p.value = thing;
 			head = p;
+			tail = head;
+			s=0;
 			ticker.tick(3);  // for the 3 statements above
 		}
 		else {
@@ -46,12 +50,15 @@ public class LinkedListWithTail<T> implements List<T> {
 			//  and get rid of this loop!
 			//
 			ListNode<T> p = head;
-			while (p.next != null) {
-				ticker.tick();
-				p = p.next;
-			}
+//			while (p.next != null) {
+//				ticker.tick();
+//				p = p.next;
+//			}
 			//  p is where it needs to be slide 201
-			p.next = q;
+//			p.next = q;
+			tail.next = q;
+			tail = q;
+			s = s + 1;
 			ticker.tick(3);  // for the 3 statements not in the loop
 		}
 		
@@ -63,12 +70,13 @@ public class LinkedListWithTail<T> implements List<T> {
 	 */
 	@Override
 	public int getSize() {
-		int ans = 0;
-		for (ListNode<T> p = this.head; p != null; p = p.next) {
-			ans = ans + 1;
-			ticker.tick();
-		}
-		return ans;
+//		int ans = 0;
+//		for (ListNode<T> p = this.head; p != null; p = p.next) {
+//			ans = ans + 1;
+//			ticker.tick();
+//		}
+		ticker.tick();
+		return s;
 	}
 
 	/**

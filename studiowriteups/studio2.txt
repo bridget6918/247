@@ -8,8 +8,8 @@ Students in your studio group:
 
     Name        Student ID (begins with a 4)
 	
-1.
-2.
+1.Bridget Wang	456190
+2.Sylvia Dai	456114
 3.
 4.
 5.
@@ -20,22 +20,28 @@ Below each question, type in your short, to-the-point answers.
 Part A
 
 What do you see in the plots for ticks and time?
-
+The curves are pretty smooth. quadratic shape. 
 How would you characterize those curves?
-
+Smooth, quadratic curves. 
 Based on the current code for addLast, why do you see this behavior?
+Because the way we add to the end of a list is to first create a new list nod, 
+go through the current list, and then add one to the end. Every time we add, 
+we have to repeat this process. 
 
 Part B
 
 What behavior do you see now for appending n items to a list if you use a tail reference?
-
+The curve becomes linear. 
 While we have reasoned so far only about time, if we are adding n elements to the end of a list, what is the asymptotic complexity of the additional space required when using the tail reference?
-
+Because now we do not need to run a loop to find the end. 
 Under what conditions would you recommend using a linked list with a tail reference vs. a linked list without at tail reference?
+When the condition allows (enough memory), always use a linked list w/ a tail reference,
+because it is faster. If restricted by conditions, then consider using no tail reference. 
 
 Part C
 
 Why does getSize() take the time it does?
-
+Because it is counting through the list every time we run getSize. 
 How did you achieve Θ(1) performance for getSize()?
-
+We count the size when adding the thing into the list. So when we run
+getSize, we just need to call the size we have already got. 
