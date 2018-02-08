@@ -5,7 +5,7 @@ import java.util.List;
 
 public class UnorderedList<T extends Comparable<T>> implements PriorityQueue<T> {
 
-	public List<T> list;
+	public LinkedList<T> list;
 	
 	public UnorderedList() {
 		list = new LinkedList<T>();
@@ -13,25 +13,20 @@ public class UnorderedList<T extends Comparable<T>> implements PriorityQueue<T> 
 	
 	@Override
 	public boolean isEmpty() {
-		//
-		// FIXME
-		//
-		return false;
+		if(list.isEmpty()) {
+			return true;
+		}
+		else return false;
 	}
 
 	@Override
 	public void insert(T thing) {
-		//
-		// FIXME
-		//
+		list.addLast(thing);
 	}
 
 	@Override
 	public T extractMin() {
-		//
-		// FIXME
-		//
-		return null;
+		
 	}
 
 }

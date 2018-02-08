@@ -8,8 +8,8 @@ Students in your studio group:
 
     Name        Student ID (begins with a 4)
 	
-1.
-2.
+1.Bridget Wang	456190
+2.Sylvia Dai	456114
 3.
 4.
 5.
@@ -19,14 +19,19 @@ Students in your studio group:
 Part A
 
 What are three data types that can serve as T?
-
+String, Enum, BigDecimal 
 Which class did you pick to examine its compareTo method?
-
+Enum
 How did its compareTo method impose a natural order on that class's instances?
+compareTo for enum returns a negative integer, zero, or a positive integer as this compared object is less than, equal to, or greater than the specified enum. 
+Enum constants has to have the same enum type as the other enum (so the same getClass and getDeclaringClass). 
+"The natural order implemented by this method is the order in which the constants are declared."
 
 Part B
 
 How does compareTo work?  Does it always return either -1, 0, or +1?
+No, it always returns either a negative integer, zero, or a positive integer. 
+It first makes sure that the two objects are comparable, and then returns self.ordinal - other.ordinal. 
 
 Part C
 
@@ -35,21 +40,21 @@ Given a LinkedList<T> of size n, what is the asymptotic complexity, worst-case,
 for performing each of the following operations?
 
   1)  Appending to the end of that list  addLast(..)
-  
+  For the worst-case scenario, we already have the tail of the list, so it will take O(1) time. 
   2)  Prepending to the beginning of that list   addFirst(...)
-  
+  O(1) because we know where the head is. 
   3)  Inserting an element in the middle of the list  add(size/2, .....)
-  
+  Because we need to find the size first, it will take O(n). 
 And for your implementation of a PriorityQueue using the Unordered List, 
 given n elements already in the queue, what is the asymptotic complexity, 
 worst-case for performing each of the following operations?
   
   4)  extractMin
-  
+  O(n)
   5)  insert
-  
+  Theta(1)
   6)  isEmpty
-  
+  Theta(1)
   
 Part D
 
@@ -68,11 +73,11 @@ given n elements already in the queue, what is the asymptotic complexity,
 worst-case for performing each of the following operations?
   
   4)  extractMin
-  
+  Theta(1)
   5)  insert
-  
+  Theta(n)
   6)  isEmpty
-  
+  Theta(1)
  
  Are there situations when you would want to use the OrderedArray or the UnorderedList instead of
  the binary heap described in class?   Explain please.
