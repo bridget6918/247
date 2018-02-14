@@ -32,7 +32,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	//
 	// Here begin the methods described in lecture
 	//
-	
+
 	/**
 	 * Insert a new thing into the heap.  As discussed in lecture, it
 	 *   belongs at the end of objects already in the array.  You can avoid
@@ -64,9 +64,25 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		// You have to now put ans into the heap array
 		//   Recall in class we reduced insert to decrease
 		//
-		// FIXME
+		// 
 		//
+		array[size] = ans;
+		decrease(size);
+
 		return ans;
+	}
+
+	/**
+	 * 
+	 * @param from original index of the element 
+	 * @param to new index of the element
+	 */
+	public void moveItem(int from, int to) {
+		Decreaser<T> store = array[from];
+		array[from] = array[to];
+		array[to] = store;
+		array[from].loc = from;
+		array[to].loc = to;
 	}
 
 	/**
@@ -99,9 +115,23 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//
 		// As described in lecture
 		//
-		
+
+		// to make sure loc is w/in a certain bound - from Piazza
+		// because we want to ignore index 0, it should ignore anything before index 1
+		if(loc <=1) {
+			return;
+		}
+
+		// checking whether a swap needs to happen
+		T x = array[loc].getValue(); // child node
+		T y = array[loc/2].getValue(); // parent node
+		int a = x.compareTo(y);
+		if(a < 0) { // if negative, it means the child is smaller than the parent, so needs to swap
+			moveItem(loc, loc / 2);
+			decrease(loc / 2);
+		}
 	}
-	
+
 	/**
 	 * Described in lecture, this method will return a minimum element from
 	 *    the heap.  The hole that is created is handled as described in
@@ -117,8 +147,16 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//    Be sure to store null in an array slot if it is no longer
 		//      part of the active heap
 		//
-		// FIXME
+		// 
 		//
+		if(!this.isEmpty()) {
+			array[1] = array[size];
+			array[1].loc = 1;
+			array[size] = null;
+			--size;
+			heapify(1);
+		}
+
 		return ans;
 	}
 
@@ -132,10 +170,49 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	private void heapify(int where) {
 		//
 		// As described in lecture
-		//  FIXME
+		//  
 		//
+
+		// recursion
+		if((where*2+1) <= size) { // have to check if both left and right exist first, not the other way around
+			T p = array[where].getValue(); // parent
+			T c1 = array[where*2].getValue(); // left child
+			T c2 = array[where*2+1].getValue(); // right child
+			int a = p.compareTo(c1); // + if parent > child, - if parent < child
+			int b = p.compareTo(c2);
+			int c = c1.compareTo(c2); // compare b/n the two children
+
+			if(a < 0 && b < 0) {
+				return;
+			}
+			else {
+				if(c < 0) {
+					moveItem(array[where*2].loc, array[where].loc);
+					heapify(where*2);
+				}
+				else {
+					moveItem(array[where*2+1].loc, array[where].loc);
+					heapify(where*2+1);
+				}
+			}
+		}
+		else if((where*2) <= size) { // if just the left child exists
+			T p = array[where].getValue(); // parent
+			T c1 = array[where*2].getValue(); // left child
+			int a = p.compareTo(c1); // + if parent > child, - if parent < child
+			
+			if(a < 0) {
+				return;
+			}
+			else {
+				moveItem(array[where*2].loc, array[where].loc);
+				heapify(where*2);
+			}
+		}
+
 	}
-	
+
+
 	/**
 	 * Does the heap contain anything currently?
 	 * I implemented this for you.  Really, no need to thank me!
@@ -143,11 +220,11 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	public boolean isEmpty() {
 		return size == 0;
 	}
-	
+
 	//
 	// End of methods described in lecture
 	//
-	
+
 	//
 	// The methods that follow are necessary for the debugging
 	//   infrastructure.
@@ -177,11 +254,11 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	public int size() {
 		return this.size;
 	}
-	
+
 	public int capacity() {
 		return this.array.length-1;
 	}
-	
+
 
 	/**
 	 * The commented out code shows you the contents of the array,
@@ -189,11 +266,11 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	 *   output.
 	 */
 	public String toString() {
-//		String ans = "";
-//		for (int i=1; i <= size; ++i) {
-//			ans = ans + i + " " + array[i] + "\n";
-//		}
-//		return ans;
+		//		String ans = "";
+		//		for (int i=1; i <= size; ++i) {
+		//			ans = ans + i + " " + array[i] + "\n";
+		//		}
+		//		return ans;
 		return HeapToStrings.toTree(this);
 	}
 
