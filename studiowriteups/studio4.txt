@@ -8,8 +8,8 @@ Students in your studio group:
 
     Name        Student ID (begins with a 4)
 	
-1.
-2.
+1.Bridget Wang	456190
+2.Sylvia Dai	456114
 3.
 4.
 5.
@@ -19,27 +19,42 @@ Substitution
 
 
 Using substitution, prove that the solution to T(n)=T(n-1)+10 is T(n)=10n
-
+T(n) = T(n-1)+10 = T(n-1)+T(1) = T(n-1-1)+T(1)+T(1) = T(n-2)+T(1)*2
+= ... = T(n-(n-1))+T(1)*(n-1) = T(1)+T(1)*(n-1) = T(1)*n = 10n
 
 
 Using substitution, show that T(n)=T(n-1)+10 is O(n-squared)
-
+closed-form of T(n) = 10n
+First we look at the base case, T(1) = 10. It obviously is O(n^2) because 10 is a constant.
+By induction, we assume T(n-1) is O((n-1)^2)
+Then we have a c exists which makes T(n-1) <= c*((n-1)^2) + 10
+Therefore we have T(n) <= c*(n^2) + 10 --> which is O(n^2)
 
 Recursion Tree Solutions
 
 1.
+Depth Level #Nodes Work Per Node 	Total
+0		n		1		10			
+1		n-1		1		2(n-1)-1	1
+
+Sum = Run time = [(2n-1)+1)*n/2+10]/2 = O(n^2)
 
 
-2.
+2.T(n) = T(n-1) = 4n - 5, T(1) = 5
+Depth Level #Nodes Work Per Node 	Total
+0		n		1		
 
+Sum = 
 
-3.
+3. 
+Depth Level 		#Nodes Work Per Node 	Total
+0		n				1		
 
-
-4.
+4.T(n) = T(n/2) + n^3
 
 
 5. 
+
 
 
 6.
