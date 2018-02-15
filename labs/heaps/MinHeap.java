@@ -68,7 +68,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//
 		array[size] = ans;
 		decrease(size);
-		ticker.tick();
+		ticker.tick(3);
 		return ans;
 	}
 
@@ -83,7 +83,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		array[to] = store;
 		array[from].loc = from;
 		array[to].loc = to;
-		ticker.tick();
+		ticker.tick(5);
 	}
 
 	/**
@@ -130,7 +130,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		if(a < 0) { // if negative, it means the child is smaller than the parent, so needs to swap
 			moveItem(loc, loc / 2);
 			decrease(loc / 2);
-			ticker.tick();
+			ticker.tick(4);
 		}
 	}
 
@@ -157,9 +157,9 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 			array[size] = null;
 			--size;
 			heapify(1);
-			ticker.tick();
 		}
 
+		ticker.tick(1);
 		return ans;
 	}
 
@@ -184,7 +184,8 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 			int a = p.compareTo(c1); // + if parent > child, - if parent < child
 			int b = p.compareTo(c2);
 			int c = c1.compareTo(c2); // compare b/n the two children
-
+			ticker.tick(6);
+			
 			if(a < 0 && b < 0) {
 				return;
 			}
@@ -192,19 +193,21 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 				if(c < 0) {
 					moveItem(array[where*2].loc, array[where].loc);
 					heapify(where*2);
-					ticker.tick();
+//					ticker.tick(2);
 				}
 				else {
 					moveItem(array[where*2+1].loc, array[where].loc);
 					heapify(where*2+1);
-					ticker.tick();
+//					ticker.tick(2);
 				}
+				ticker.tick(2);
 			}
 		}
 		else if((where*2) <= size) { // if just the left child exists
 			T p = array[where].getValue(); // parent
 			T c1 = array[where*2].getValue(); // left child
 			int a = p.compareTo(c1); // + if parent > child, - if parent < child
+			ticker.tick(3);
 			
 			if(a < 0) {
 				return;
@@ -212,7 +215,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 			else {
 				moveItem(array[where*2].loc, array[where].loc);
 				heapify(where*2);
-				ticker.tick();
+				ticker.tick(2);
 			}
 		}
 
