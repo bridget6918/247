@@ -130,8 +130,8 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		if(a < 0) { // if negative, it means the child is smaller than the parent, so needs to swap
 			moveItem(loc, loc / 2);
 			decrease(loc / 2);
+			ticker.tick(4);
 		}
-		ticker.tick(4);
 	}
 
 	/**
@@ -215,8 +215,8 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 			else {
 				moveItem(array[where*2].loc, array[where].loc);
 				heapify(where*2);
+				ticker.tick(2);
 			}
-			ticker.tick(2);
 		}
 
 	}
