@@ -1,33 +1,19 @@
 -------------------
-CSE247 Robot tester starts testing heaps on 2018-02-16 20:00:55 -0600
+CSE247 Robot tester starts testing heaps on 2018-02-16 22:07:40 -0600
 
 ========
 Testing in ./GradingRepos/repos/cse247-s18-students-bridget.wang: heaps as of 2018-02-15 00:05
 ========
 Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at 5dec4ab Merge remote-tracking branch 'upstream/master'
+HEAD is now at b22790a studio 4
 No local changes to save
 
-Updating 5dec4ab..b22790a
+Updating b22790a..f85b677
 Fast-forward
- labs/heaps/MinHeap.java     | 118 ++++++++++++++++++++++++++++++++++++++------
- outputs/heapsort-ticks0.csv |  46 +++++++++++++++++
- outputs/heapsort-ticks1.csv |  46 +++++++++++++++++
- outputs/heapsort-ticks2.csv |  46 +++++++++++++++++
- outputs/heapsort-ticks3.csv |  46 +++++++++++++++++
- outputs/heapsort-time0.csv  |  46 +++++++++++++++++
- outputs/heapsort-time1.csv  |  46 +++++++++++++++++
- outputs/heapsort-time2.csv  |  46 +++++++++++++++++
- studiowriteups/studio4.txt  |  29 ++++++++---
- 9 files changed, 446 insertions(+), 23 deletions(-)
- create mode 100644 outputs/heapsort-ticks0.csv
- create mode 100644 outputs/heapsort-ticks1.csv
- create mode 100644 outputs/heapsort-ticks2.csv
- create mode 100644 outputs/heapsort-ticks3.csv
- create mode 100644 outputs/heapsort-time0.csv
- create mode 100644 outputs/heapsort-time1.csv
- create mode 100644 outputs/heapsort-time2.csv
+ RoboGrade/heaps-test.TestMinHeap.txt | 233 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 233 insertions(+)
+ create mode 100644 RoboGrade/heaps-test.TestMinHeap.txt
 Going back in time to: 2018-02-15 00:05
 At hash 81f3b00bdb7f596f6eed49c2b5fd113d58098539
 
@@ -105,13 +91,13 @@ test:
     [junit] done
     [junit] Displaying a correct heap of 50 unique integers:
     [junit]                                                                0                                                               
-    [junit]                                1                                                               7                               
-    [junit]                2                               5                               8                               14              
-    [junit]        3               4               6               9               11              18              31              21      
-    [junit]    26      12      15      24      19      10      33      17      13      20      40      23      42      32      38      27  
-    [junit]  41  39  37  22  25  16  47  34  45  29  49  28  48  44  46  43  36  35  30
+    [junit]                                1                                                               2                               
+    [junit]                3                               8                               6                               5               
+    [junit]        9               4               12              10              23              18              7               22      
+    [junit]    34      11      19      44      15      13      24      14      28      27      49      26      16      31      48      37  
+    [junit]  47  43  38  35  41  29  45  46  39  20  40  21  30  36  25  17  42  32  33
     [junit] 
-    [junit] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.655 sec
+    [junit] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.914 sec
     [junit] Output:
     [junit] Testing unique size 0
     [junit] done
@@ -155,14 +141,14 @@ test:
     [junit] done
     [junit] Displaying a correct heap of 50 unique integers:
     [junit]                                                                0                                                               
-    [junit]                                1                                                               7                               
-    [junit]                2                               5                               8                               14              
-    [junit]        3               4               6               9               11              18              31              21      
-    [junit]    26      12      15      24      19      10      33      17      13      20      40      23      42      32      38      27  
-    [junit]  41  39  37  22  25  16  47  34  45  29  49  28  48  44  46  43  36  35  30
+    [junit]                                1                                                               2                               
+    [junit]                3                               8                               6                               5               
+    [junit]        9               4               12              10              23              18              7               22      
+    [junit]    34      11      19      44      15      13      24      14      28      27      49      26      16      31      48      37  
+    [junit]  47  43  38  35  41  29  45  46  39  20  40  21  30  36  25  17  42  32  33
     [junit] 
     [junit] 
-    [junit] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.655 sec
+    [junit] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.914 sec
     [junit] ------------- Standard Output ---------------
     [junit] Testing unique size 0
     [junit] done
@@ -206,22 +192,22 @@ test:
     [junit] done
     [junit] Displaying a correct heap of 50 unique integers:
     [junit]                                                                0                                                               
-    [junit]                                1                                                               7                               
-    [junit]                2                               5                               8                               14              
-    [junit]        3               4               6               9               11              18              31              21      
-    [junit]    26      12      15      24      19      10      33      17      13      20      40      23      42      32      38      27  
-    [junit]  41  39  37  22  25  16  47  34  45  29  49  28  48  44  46  43  36  35  30
+    [junit]                                1                                                               2                               
+    [junit]                3                               8                               6                               5               
+    [junit]        9               4               12              10              23              18              7               22      
+    [junit]    34      11      19      44      15      13      24      14      28      27      49      26      16      31      48      37  
+    [junit]  47  43  38  35  41  29  45  46  39  20  40  21  30  36  25  17  42  32  33
     [junit] 
     [junit] ------------- ---------------- ---------------
     [junit] 
-    [junit] Testcase: testViaSorting took 0.064 sec
-    [junit] Testcase: testEmptyHeap took 0.01 sec
-    [junit] Testcase: testAndPrint took 0.024 sec
-    [junit] Testcase: testExtractMin took 0.013 sec
+    [junit] Testcase: testViaSorting took 0.062 sec
+    [junit] Testcase: testEmptyHeap took 0.012 sec
+    [junit] Testcase: testAndPrint took 0.022 sec
+    [junit] Testcase: testExtractMin took 0.038 sec
     [junit] Testcase: testLocUpdatedHeapify took 0.007 sec
-    [junit] Testcase: testInsert took 0.005 sec
-    [junit] Testcase: testUsingHeapSort took 2.51 sec
-    [junit] Testcase: testLocUpdatedDecrease took 0.001 sec
+    [junit] Testcase: testInsert took 0.002 sec
+    [junit] Testcase: testUsingHeapSort took 2.745 sec
+    [junit] Testcase: testLocUpdatedDecrease took 0 sec
 
 BUILD SUCCESSFUL
 Total time: 3 seconds
@@ -229,5 +215,5 @@ Total time: 3 seconds
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing heaps on 2018-02-16 20:01:04 -0600
+CSE247 Robot tester ends testing heaps on 2018-02-16 22:07:49 -0600
 -------------------
