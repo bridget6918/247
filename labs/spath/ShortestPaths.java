@@ -85,7 +85,21 @@ public class ShortestPaths {
 		// Extract nodes from the pq heap
 		//   and act upon them as instructed in class and the text.
 		//
-		// FIXME
+		// the total run time of the algorithm is O((E+V)Log V) times
+		while(!pq.isEmpty()) { // this part runs V numbers of times
+			VertexAndDist u = pq.extractMin(); // this is the expensive part, and it takes log V times to run
+			Vertex uv = u.getVertex();
+			int d = u.getDistance();
+			
+			for(Edge e : uv.edgesFrom()) { // this loop runs E times for every edge (worst case)
+				Decreaser<VertexAndDist> ud = map.get(e.to);
+				int currDist = ud.getValue().getDistance(); 
+				if((d + weights.get(e)) < currDist) {
+					ud.decrease(ud.getValue().sameVertexNewDistance(d + weights.get(e))); // this is the expensive part, and it takes log V time to run
+					toEdge.put(ud.getValue().getVertex(), e);
+				}
+			}
+		}
 	}
 
 	
@@ -101,11 +115,15 @@ public class ShortestPaths {
 	 */
 	public LinkedList<Edge> returnPath(Vertex endVertex) {
 		LinkedList<Edge> path = new LinkedList<Edge>();
-
-		//
-		// FIXME
-		//
-
+		Vertex ev = endVertex;
+//		if(toEdge.get(endVertex) != null) {
+			while(ev != startVertex) {
+				Edge e = toEdge.get(ev);
+				path.addFirst(e);
+				ev = e.from;
+			}
+			
+//		}		
 		return path;
 	}
 	
