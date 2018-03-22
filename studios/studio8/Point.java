@@ -15,7 +15,9 @@ public class Point {
 
 	@Override
 	public int hashCode(){
-		return rand.nextInt();	
+		int result;
+		result = 17 * x + 11 * y + 1;
+		return result;	
 	}
 	
 

@@ -15,9 +15,9 @@ public class Pancake {
 
 	@Override
 	public int hashCode(){
-		int hash = radius;
+		int hash = radius * 17;
 		if (wheat){
-			hash = hash + 5;
+			hash = hash + 11;
 		}
 		return hash;
 	}
