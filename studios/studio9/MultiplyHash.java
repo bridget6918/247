@@ -35,7 +35,7 @@ public class MultiplyHash<T> extends MyHashSet<T> {
 //		System.out.println("cba".hashCode());
 		Random r = new Random();
 		MultiplyHash<Object> h = new MultiplyHash<Object>(2);
-		for (int i=0; i < 1000; i = i + 32) {
+		for (int i=0; i < 1000; i = i + 31) {
 			h.add(new Integer(i));
 		}
 		h.dumpBuckets();
