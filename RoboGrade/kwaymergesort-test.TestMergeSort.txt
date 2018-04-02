@@ -1,0 +1,188 @@
+-------------------
+CSE247 Robot tester starts testing kwaymergesort on 2018-04-01 19:51:10 -0500
+
+========
+Testing in ./GradingRepos/repos/cse247-s18-students-bridget.wang: kwaymergesort as of 2018-03-29 00:05
+========
+Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang
+Your branch is up-to-date with 'origin/master'.
+HEAD is now at c3a0061 studio 8
+No local changes to save
+
+Updating c3a0061..c579c34
+Fast-forward
+ RoboGrade/spath-testing.TestShortestPathSilent.txt |   70 +-
+ labs/rabinkarp/RK.java                             |   30 +
+ labs/rabinkarp/TestRK.java                         |   80 +
+ lecture/lecture9/loudermans18/LoudermanSet.java    |  141 +
+ outputs/heapsort-ticks0.csv                        |   46 -
+ outputs/heapsort-ticks1.csv                        |   46 -
+ outputs/heapsort-ticks2.csv                        |   46 -
+ outputs/heapsort-ticks3.csv                        |   46 -
+ outputs/heapsort-time0.csv                         |   46 -
+ outputs/heapsort-time1.csv                         |   46 -
+ outputs/heapsort-time2.csv                         |   46 -
+ outputs/studio8p1.csv                              | 1001 -------
+ outputs/studio8p2.csv                              | 3003 --------------------
+ studios/studio9/DivisionHash.java                  |   41 +
+ studios/studio9/MultiplyHash.java                  |   45 +
+ studios/studio9/MyHashSet.java                     |  129 +
+ studios/studio9/MyInteger.java                     |   19 +
+ studios/studio9/Point.java                         |   48 +
+ studios/studio9/PointSet.java                      |   38 +
+ studiowriteups/studio9.txt                         |   41 +
+ 20 files changed, 644 insertions(+), 4364 deletions(-)
+ create mode 100644 labs/rabinkarp/RK.java
+ create mode 100644 labs/rabinkarp/TestRK.java
+ create mode 100644 lecture/lecture9/loudermans18/LoudermanSet.java
+ delete mode 100644 outputs/heapsort-ticks0.csv
+ delete mode 100644 outputs/heapsort-ticks1.csv
+ delete mode 100644 outputs/heapsort-ticks2.csv
+ delete mode 100644 outputs/heapsort-ticks3.csv
+ delete mode 100644 outputs/heapsort-time0.csv
+ delete mode 100644 outputs/heapsort-time1.csv
+ delete mode 100644 outputs/heapsort-time2.csv
+ delete mode 100644 outputs/studio8p1.csv
+ delete mode 100644 outputs/studio8p2.csv
+ create mode 100644 studios/studio9/DivisionHash.java
+ create mode 100644 studios/studio9/MultiplyHash.java
+ create mode 100644 studios/studio9/MyHashSet.java
+ create mode 100644 studios/studio9/MyInteger.java
+ create mode 100644 studios/studio9/Point.java
+ create mode 100644 studios/studio9/PointSet.java
+ create mode 100644 studiowriteups/studio9.txt
+Going back in time to: 2018-03-29 00:05
+At hash 005c78dd0df8f4b473c61753ba37266d56ea9dbf
+
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+copytest:
+     [echo] would copy from /Users/puneetsachdeva/git/cse247-s18-students key bridget.wang testfilesource test/TestMergeSort package kwaymergesort repo ./GradingRepos/repos/cse247-s18-students-bridget.wang
+     [copy] Copying 1 file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/labs/kwaymergesort/test
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Compiling the code
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling kwaymergesort/KWayMergeSort
+    [mkdir] Created dir: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling kwaymergesort/test/TestMergeSort
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Running test test.TestMergeSort
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+test:
+    [junit] Running kwaymergesort.test.TestMergeSort
+    [junit] Testsuite: kwaymergesort.test.TestMergeSort
+    [junit] 16-way merge sort of 256 integers
+    [junit] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec
+    [junit] Output:
+    [junit] 16-way merge sort of 256 integers
+    [junit] 
+    [junit] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec
+    [junit] ------------- Standard Output ---------------
+    [junit] 16-way merge sort of 256 integers
+    [junit] ------------- ---------------- ---------------
+    [junit] 
+    [junit] Testcase: sortTest took 0.045 sec
+    [junit] 	FAILED
+    [junit] At index 0 expected -2139071580 but got -1995551412
+    [junit] junit.framework.AssertionFailedError: At index 0 expected -2139071580 but got -1995551412
+    [junit] 	at kwaymergesort.test.TestMergeSort.sortOnce(TestMergeSort.java:42)
+    [junit] 	at kwaymergesort.test.TestMergeSort.sortTest(TestMergeSort.java:25)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 
+
+BUILD FAILED
+/Users/puneetsachdeva/cse247-support/build.xml:34: Test kwaymergesort.test.TestMergeSort failed
+
+Total time: 0 seconds
+========
+Testing in ./GradingRepos/repos/cse247-s18-students-bridget.wang: kwaymergesort as of 2018-04-05 00:05
+========
+Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang
+Your branch is up-to-date with 'origin/master'.
+HEAD is now at c579c34 studio 9
+No local changes to save
+
+Already up-to-date.
+Going back in time to: 2018-04-05 00:05
+At hash c579c34d680c4ba1f23801500e17b7eb327c7009
+
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+copytest:
+     [echo] would copy from /Users/puneetsachdeva/git/cse247-s18-students key bridget.wang testfilesource test/TestMergeSort package kwaymergesort repo ./GradingRepos/repos/cse247-s18-students-bridget.wang
+     [copy] Copying 1 file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/labs/kwaymergesort/test
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Compiling the code
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling kwaymergesort/KWayMergeSort
+    [mkdir] Created dir: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling kwaymergesort/test/TestMergeSort
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Running test test.TestMergeSort
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+test:
+    [junit] Running kwaymergesort.test.TestMergeSort
+    [junit] Testsuite: kwaymergesort.test.TestMergeSort
+    [junit] 32-way merge sort of 32768 integers
+    [junit] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.09 sec
+    [junit] Output:
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 
+    [junit] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.09 sec
+    [junit] ------------- Standard Output ---------------
+    [junit] 32-way merge sort of 32768 integers
+    [junit] ------------- ---------------- ---------------
+    [junit] 
+    [junit] Testcase: sortTest took 0.07 sec
+    [junit] 	FAILED
+    [junit] At index 0 expected -2147070924 but got -689622680
+    [junit] junit.framework.AssertionFailedError: At index 0 expected -2147070924 but got -689622680
+    [junit] 	at kwaymergesort.test.TestMergeSort.sortOnce(TestMergeSort.java:42)
+    [junit] 	at kwaymergesort.test.TestMergeSort.sortTest(TestMergeSort.java:25)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 
+
+BUILD FAILED
+/Users/puneetsachdeva/cse247-support/build.xml:34: Test kwaymergesort.test.TestMergeSort failed
+
+Total time: 0 seconds
+================
+Lab is not counted -- failed unit tests
+================
+
+CSE247 Robot tester ends testing kwaymergesort on 2018-04-01 19:51:22 -0500
+-------------------
