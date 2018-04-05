@@ -24,7 +24,7 @@ public class RK {
 	 * Rabin-Karp string matching for a window of the specified size
 	 * @param m size of the window
 	 */
-	public RK(int m) {
+	public RK(int m) { 
 		this.m = m;
 		this.cb = new int [m];
 		this.pointer = 0;
