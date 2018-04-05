@@ -8,8 +8,8 @@ Students in your studio group:
 
     Name        Student ID (begins with a 4)
 	
-1.
-2.
+1.Bridget Wang	456190
+2.Sylvia Dai	456114
 3.
 4.
 5.
@@ -20,27 +20,27 @@ Students in your studio group:
 Part A
 
 A1. Why do sad and happy appear as they do? Why is happy indented? What are the parent, left-child, and right-child relationships between happy and sad?
-
+This means "sad" is the root node, and "happy" is actually the left child. 
 Modify the code in the main method so that some string appears above sad, indented as much as happy.
-
+So if we put for example the word "zip" in which z is larger than s, it will appear above sad and indented as much as happy. 
 A2. What string did you use?
-
+"zip"
 In the numbers that follow, find the first and last entries in the tree that is shown (on its side, as discussed in lecture).
-
+247 and 30
 A3. Is the first number always the first line to be shown in such a display?
-
+The smallest number is actually the last line
 A4. Is the last number always the last line to be shown?
-
+The last number is the first line
 A5. Why do we need addHelper?
-
+It will return a new node with the value inside it, if we hit null
 A6. Why is it private instead of public?
-
+1- If you only need it inside this class, it should be private. 2- because we are using the SortedSet interface. 
 A7. Does the code actually remove the node containing the value to be removed? If not, what is actually happening?
-
+No, it doesn't remove the node but just replace the value with a smaller value. 
 A8. Why does the code fail to execute properly?
-
+Because color cannot be used in the comparable interface, so it fails to compare the two colors. 
 A9. Why does eclipse not report a problem when you try to create a BST of type Color?
-
+Because it is not the step that throws an error - it happens when we try to compare (in line 224). 
 
 Part B
 
@@ -48,25 +48,30 @@ Part B
 SortedSetUsingBST (random input)
 
 B1. What behavior do you see in the output? You will likely have to rely on ticks rather than time, because the times are so fast.
-
+It seems like an nlogn runtime. 
 B2. What behavior did you expect to see, and why?
-
+nlogn runtime, because random input will keep the tree balanced. 
 
 SortedSetUsingBST (sorted input)
 
 B3. What behavior do you see in the output given the sorted input?
-
+It seems like n^2 time. 
 B4. What behavior did you expect to see, and why?
+n^2. Because if it is a sorted input, it keep adding to the right-child of the BST. 
 
 SortedSetUsingUnorderedList
 
 B5. What behavior do you see in the output when a sorted set is implemented by an unordered list? Adding to the list should be quick, so why are we seeing these times?
-
+It seems like n^2 time, which is a bit worse than the runtime we got earlier. This is because it takes longer time to perform the contains operation
+which will take n time instead of log n time for the tree (if balanced time). 
 B6. What behavior did you expect to see, and why?
+see above. Because it takes time to add but also takes time to check (contains). 
 
+Part C
+1 -> 2 -> 3
 
-
-
+If a node is red, then both its children are black. This keeps us from getting two reds in a row heading toward a leaf.
+When you add, it's always a red node, but then you change the color to maintain the tree. 
 
 
 

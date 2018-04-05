@@ -51,14 +51,14 @@ public class SortedSetUsingBST implements Algorithm<Integer[], Integer[]> {
 	public String toString() {
 		return "Sorted set using BST of " + originalArray.length + " numbers";
 	}
-	
+
 	public static void main(String[] args) {
 		GenSizes sizes = GenSizes.arithmetic(100, 10000, 100);
 		ExecuteAlgorithm.timeAlgorithm(
 				"sortusingbst", 
 				"studio10.SortedSetUsingBST", 
-				new IntArrayGenerator(), 
-/*				new IntSequenceArrayGenerator(),   */
+				/*				new IntArrayGenerator(), 	*/
+				new IntSequenceArrayGenerator(),  
 				sizes
 				);
 	}
