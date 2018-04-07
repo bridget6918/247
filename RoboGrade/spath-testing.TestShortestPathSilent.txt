@@ -1,40 +1,33 @@
 -------------------
-CSE247 Robot tester starts testing spath on 2018-03-25 17:36:10 -0500
+CSE247 Robot tester starts testing spath on 2018-04-07 11:35:48 -0500
 
 ========
 Testing in ./GradingRepos/repos/cse247-s18-students-bridget.wang: spath as of 2018-03-08 00:05
 ========
 Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at bea4f43 Lab 6 code
+HEAD is now at d2420eb robograde
 No local changes to save
 
-Updating bea4f43..c3a0061
+Updating d2420eb..b365190
 Fast-forward
- RoboGrade/spath-testing.TestShortestPathSilent.txt |   91 +
- lecture/lecture8/SetExamples2.java                 |   45 +
- lecture/lecture8/SetExamples3.java                 |   34 +
- outputs/studio8p1.csv                              | 1001 +++++++
- outputs/studio8p2.csv                              | 3003 ++++++++++++++++++++
- studios/studio8/ColorAndPoint.java                 |   90 +
- studios/studio8/HashCodeRunner.java                |   62 +
- studios/studio8/Pancake.java                       |   41 +
- studios/studio8/PancakeAndSyrup.java               |   44 +
- studios/studio8/Point.java                         |   46 +
- studios/studio8/Syrup.java                         |   45 +
- studiowriteups/studio8.txt                         |   64 +-
- 12 files changed, 4538 insertions(+), 28 deletions(-)
- create mode 100644 RoboGrade/spath-testing.TestShortestPathSilent.txt
- create mode 100644 lecture/lecture8/SetExamples2.java
- create mode 100644 lecture/lecture8/SetExamples3.java
- create mode 100644 outputs/studio8p1.csv
- create mode 100644 outputs/studio8p2.csv
- create mode 100644 studios/studio8/ColorAndPoint.java
- create mode 100644 studios/studio8/HashCodeRunner.java
- create mode 100644 studios/studio8/Pancake.java
- create mode 100644 studios/studio8/PancakeAndSyrup.java
- create mode 100644 studios/studio8/Point.java
- create mode 100644 studios/studio8/Syrup.java
+ RoboGrade/kwaymergesort-test.TestMergeSort.txt    |  99 ++----
+ labs/kwaymergesort/KWayMergeSort.java             |  66 +++-
+ labs/rabinkarp/RK.java                            |  50 ++-
+ lecture/lecture10/simons18/OrderSet247.java       | 137 ++++++++
+ lecture/lecture10/simons18/TreeNode.java          |  21 ++
+ studios/studio10/BST.java                         | 363 ++++++++++++++++++++++
+ studios/studio10/SortedSetUsingBST.java           |  66 ++++
+ studios/studio10/SortedSetUsingUnorderedList.java |  67 ++++
+ studios/studio10/TreeNode.java                    |  27 ++
+ studiowriteups/studio10.txt                       |  43 +--
+ 10 files changed, 829 insertions(+), 110 deletions(-)
+ create mode 100644 lecture/lecture10/simons18/OrderSet247.java
+ create mode 100644 lecture/lecture10/simons18/TreeNode.java
+ create mode 100644 studios/studio10/BST.java
+ create mode 100644 studios/studio10/SortedSetUsingBST.java
+ create mode 100644 studios/studio10/SortedSetUsingUnorderedList.java
+ create mode 100644 studios/studio10/TreeNode.java
 Going back in time to: 2018-03-08 00:05
 At hash bea4f43c8f5f4845330c3a239370a089e22ef7ac
 
@@ -70,16 +63,16 @@ Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
 test:
     [junit] Running spath.testing.TestShortestPathSilent
     [junit] Testsuite: spath.testing.TestShortestPathSilent
-    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.133 sec
-    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.133 sec
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.506 sec
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.506 sec
     [junit] 
-    [junit] Testcase: test took 4.112 sec
+    [junit] Testcase: test took 4.484 sec
 
 BUILD SUCCESSFUL
-Total time: 4 seconds
+Total time: 5 seconds
 ================
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing spath on 2018-03-25 17:36:21 -0500
+CSE247 Robot tester ends testing spath on 2018-04-07 11:36:00 -0500
 -------------------
