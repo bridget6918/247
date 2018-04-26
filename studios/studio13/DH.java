@@ -21,7 +21,7 @@ public class DH {
 	 * @return
 	 */
 	public long getPubKey() {
-		return 0; // FIXME
+		return modexp.toThePower(privKey);
 	}
 	
 	/**
@@ -31,16 +31,20 @@ public class DH {
 	 * @return
 	 */
 	public long getAgreedNum(long otherPubKey) {
-		return 0;  // FIXME
+		return MExp.gToTheXModP(otherPubKey, privKey, modulus);
 	}
 
 	public static void main(String[] args) {
 		testLectureExample();
-		//FIXME: set Variables
-		int agreedBase = 1;
-		int agreedModulus = 1;
-		int mySecret = 1;
-		// FIXME: Construct a new DH object and generate the keys. hint, you will have to run this program more than once
+		int agreedBase = 5;
+		int agreedModulus = 17;
+		int mySecret = 11;
+		int otherPubKey = 3;
+		DH ok = new DH(agreedBase, agreedModulus, mySecret);
+		long publicKey = ok.getPubKey();
+		long sharedKey = ok.getAgreedNum(otherPubKey);
+		
+		System.out.println(publicKey + " " + sharedKey + " " + otherPubKey);
 	}
 
 	public static void testLectureExample() {

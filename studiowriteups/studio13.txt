@@ -8,8 +8,8 @@ Students in your studio group:
 
     Name        Student ID (begins with a 4)
 	
-1.
-2.
+1.Bridget Wang	456190
+2.Sylvia Dai	456114
 3.
 4.
 5.
@@ -20,15 +20,18 @@ Part 1. Introduction
 
 
 1. Give your own definition for what a crypographic key is 
-
+It carries information that allows users to encrypt or decrypt. 
 2. Explain the differences between public, private, and shared keys 
-
+Public key is known to everyone, but the private key is secret. Shared keys are private key between multiple users. 
 3. Is Diffie-Hellmann an encryption algorithm? **
-
+It is a key exchange algorithm. 
 4. Encryption is often confused with hashing, can you think of a reason why? what is the main difference? 
-
+Both convert the original information to something else based on a pre-specified algorithm. 
+The difference is that hashing does no replace the original information. 
 5. bonus: should passwords be hashed or encrypted before they are stored in a database? why? 
-
+It should be hashed, because we do not want the database to know the actual password. 
+If the pw is hashed, when you log in, the database only needs to compare the hashed values, 
+rather than decrypt it. 
 
 Part 2. Caesar Ciphers
 
@@ -36,19 +39,19 @@ Part 2. Caesar Ciphers
 For the following messages and keys, give the output of the caesar encryption:
 
 1.
-
+hfy
 2. 
-
+cheud
 3. 
-
+pas
 for the following message/encrypted message pairs, give the key
 
 1. 
-
+computer, 7
 2. 
-
+science 5
 3.
-
+wow 15
 
 Part 3. Diffie-Hellmann Key Exchanges
 
@@ -56,11 +59,12 @@ Part 3. Diffie-Hellmann Key Exchanges
 before starting make sure you are able to answer the following questions:
 
 1. what values must be agreed upon by both parties beforehand? 
-
+They agree on two integers with specific mathematical properties. (i.e. base and modulus)
 2. how many private keys are used? 
-
+Two, one for each
 3. what is the equation to calculate the public keys?
-
+A = g^a, B = g^b --> g^secret mod p
 4. what the equation to produce the final shared keys? 
-
+s = A^b mod p = g^ab mod p = g^ba mod p = B^a mod p --> g^(other public key) mod p
 5. how many of the secret numbers need to be known in order to crack the algorithm? 
+Either one of the two. 
