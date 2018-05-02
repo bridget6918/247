@@ -1,55 +1,20 @@
 -------------------
-CSE247 Robot tester starts testing AVLTree on 2018-05-01 17:18:39 -0500
+CSE247 Robot tester starts testing AVLTree on 2018-05-02 14:02:28 -0500
 
 ========
 Testing in ./GradingRepos/repos/cse247-s18-students-bridget.wang: AVLTree as of 2018-04-26 00:05
 ========
 Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at e03fef2 Merge remote-tracking branch 'upstream/master'
+HEAD is now at c44bb87 robograde
 No local changes to save
 
-Updating e03fef2..eff4bac
+Updating c44bb87..d377903
 Fast-forward
- RoboGrade/rabinkarp-TestRK.txt               | 1410 +++++++++++++-------------
- labs/AVLTree/test/TestBalancedTree.java      |   99 +-
- labs/AVLTree/validate/BSTValidator.java      |    8 +
- studios/dh/demo/DemoCaesar.java              |   43 +
- studios/dh/demo/DemoDH.java                  |   38 +
- studios/dh/demo/DemoSendMessages.java        |   20 +
- studios/dh/demo/InteractiveSend.java         |   20 +
- studios/dh/testing/TestDH.java               |   54 +
- studios/dh/utils/Agent.java                  |   30 +
- studios/dh/utils/Caesared.java               |   71 ++
- studios/dh/utils/DHFactory.java              |   36 +
- studios/dh/utils/MExp.java                   |   84 ++
- studios/dh/utils/RandomWithBoundedLong.java  |   21 +
- studios/dh/utils/SendMessage.java            |   23 +
- studios/studio13/Caesar/BreakCaesar.java     |   54 +
- studios/studio13/Caesar/TextBreakCaesar.java |   75 ++
- studios/studio13/DH.java                     |   59 ++
- studios/studio13/MExp.java                   |   80 ++
- studios/studio9/MultiplyHash.java            |    4 +-
- studiowriteups/studio12.txt                  |   43 +
- studiowriteups/studio13.txt                  |   70 ++
- 21 files changed, 1628 insertions(+), 714 deletions(-)
- create mode 100644 studios/dh/demo/DemoCaesar.java
- create mode 100644 studios/dh/demo/DemoDH.java
- create mode 100644 studios/dh/demo/DemoSendMessages.java
- create mode 100644 studios/dh/demo/InteractiveSend.java
- create mode 100644 studios/dh/testing/TestDH.java
- create mode 100644 studios/dh/utils/Agent.java
- create mode 100644 studios/dh/utils/Caesared.java
- create mode 100644 studios/dh/utils/DHFactory.java
- create mode 100644 studios/dh/utils/MExp.java
- create mode 100644 studios/dh/utils/RandomWithBoundedLong.java
- create mode 100644 studios/dh/utils/SendMessage.java
- create mode 100644 studios/studio13/Caesar/BreakCaesar.java
- create mode 100644 studios/studio13/Caesar/TextBreakCaesar.java
- create mode 100644 studios/studio13/DH.java
- create mode 100644 studios/studio13/MExp.java
- create mode 100644 studiowriteups/studio12.txt
- create mode 100644 studiowriteups/studio13.txt
+ RoboGrade/AVLTree-test.TestUnbalancedTree.txt | 509 ++++++++++++++++++++++++++
+ labs/AVLTree/test/TestUnbalancedTree.java     |  19 +
+ 2 files changed, 528 insertions(+)
+ create mode 100644 RoboGrade/AVLTree-test.TestUnbalancedTree.txt
 Going back in time to: 2018-04-26 00:05
 At hash 1b2464524fea5b70d7769dbdccf1c948d21bcf13
 
@@ -113,22 +78,12 @@ test:
     [junit] ===== End Failure report for testAndPrint(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<24> but was:<null>
-    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
     [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
     [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] ===== End Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
-    [junit] Tests run: 7, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec
+    [junit] Tests run: 5, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec
     [junit] Output:
     [junit] Testing unique size 0
     [junit] done
@@ -149,23 +104,13 @@ test:
     [junit] ===== End Failure report for testAndPrint(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<24> but was:<null>
-    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
     [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
     [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] ===== End Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
     [junit] 
-    [junit] 
-    [junit] 
-    [junit] Tests run: 7, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec
+    [junit] Tests run: 5, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec
     [junit] ------------- Standard Output ---------------
     [junit] Testing unique size 0
     [junit] done
@@ -186,24 +131,14 @@ test:
     [junit] ===== End Failure report for testAndPrint(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<24> but was:<null>
-    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
     [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
     [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] ===== End Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
     [junit] ------------- ---------------- ---------------
     [junit] 
-    [junit] Testcase: testViaSorting took 0.041 sec
+    [junit] Testcase: testViaSorting took 0.038 sec
     [junit] 	FAILED
     [junit] Wrong result returned by your size() method: expected:<1> but was:<0>
     [junit] junit.framework.AssertionFailedError: Wrong result returned by your size() method: expected:<1> but was:<0>
@@ -223,7 +158,7 @@ test:
     [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
     [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
     [junit] 
-    [junit] Testcase: testAndPrint took 0.001 sec
+    [junit] Testcase: testAndPrint took 0 sec
     [junit] 	FAILED
     [junit] Wrong result returned by your size() method: expected:<50> but was:<0>
     [junit] junit.framework.AssertionFailedError: Wrong result returned by your size() method: expected:<50> but was:<0>
@@ -233,29 +168,11 @@ test:
     [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
     [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
     [junit] 
-    [junit] Testcase: testInsertRoot took 0.023 sec
-    [junit] 	FAILED
-    [junit] Element was not inserted as the root expected:<24> but was:<null>
-    [junit] junit.framework.AssertionFailedError: Element was not inserted as the root expected:<24> but was:<null>
-    [junit] 	at AVLTree.test.TestBalancedTree.testInsertRoot(TestBalancedTree.java:55)
-    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-    [junit] 
-    [junit] Testcase: testInsertWithoutRebalance took 0.001 sec
+    [junit] Testcase: testInsertWithoutRebalance took 0.017 sec
     [junit] 	FAILED
     [junit] Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
     [junit] junit.framework.AssertionFailedError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
     [junit] 	at AVLTree.test.TestBalancedTree.testInsertWithoutRebalance(TestBalancedTree.java:74)
-    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-    [junit] 
-    [junit] Testcase: testInsertWithRebalancing took 0.001 sec
-    [junit] 	FAILED
-    [junit] Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] junit.framework.AssertionFailedError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] 	at AVLTree.test.TestBalancedTree.testInsertWithRebalancing(TestBalancedTree.java:95)
     [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
     [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
     [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -270,7 +187,7 @@ Testing in ./GradingRepos/repos/cse247-s18-students-bridget.wang: AVLTree as of 
 ========
 Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at eff4bac studio 13
+HEAD is now at d377903 Merge remote-tracking branch 'upstream/master'
 No local changes to save
 
 Already up-to-date.
@@ -294,7 +211,7 @@ compile:
     [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
 
 BUILD SUCCESSFUL
-Total time: 0 seconds
+Total time: 1 second
 Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
 
 compile:
@@ -337,22 +254,12 @@ test:
     [junit] ===== End Failure report for testAndPrint(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<84> but was:<null>
-    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
     [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
     [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] ===== End Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
-    [junit] Tests run: 7, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec
+    [junit] Tests run: 5, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.082 sec
     [junit] Output:
     [junit] Testing unique size 0
     [junit] done
@@ -373,23 +280,13 @@ test:
     [junit] ===== End Failure report for testAndPrint(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<84> but was:<null>
-    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
     [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
     [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] ===== End Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
     [junit] 
-    [junit] 
-    [junit] 
-    [junit] Tests run: 7, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec
+    [junit] Tests run: 5, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.082 sec
     [junit] ------------- Standard Output ---------------
     [junit] Testing unique size 0
     [junit] done
@@ -410,24 +307,14 @@ test:
     [junit] ===== End Failure report for testAndPrint(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<84> but was:<null>
-    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
     [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
     [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTree) ========
     [junit] 
     [junit] 
-    [junit] ===== Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] ===== End Failure report for testInsertWithRebalancing(AVLTree.test.TestBalancedTree) ========
-    [junit] 
-    [junit] 
     [junit] ------------- ---------------- ---------------
     [junit] 
-    [junit] Testcase: testViaSorting took 0.033 sec
+    [junit] Testcase: testViaSorting took 0.037 sec
     [junit] 	FAILED
     [junit] Wrong result returned by your size() method: expected:<1> but was:<0>
     [junit] junit.framework.AssertionFailedError: Wrong result returned by your size() method: expected:<1> but was:<0>
@@ -457,16 +344,7 @@ test:
     [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
     [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
     [junit] 
-    [junit] Testcase: testInsertRoot took 0.015 sec
-    [junit] 	FAILED
-    [junit] Element was not inserted as the root expected:<84> but was:<null>
-    [junit] junit.framework.AssertionFailedError: Element was not inserted as the root expected:<84> but was:<null>
-    [junit] 	at AVLTree.test.TestBalancedTree.testInsertRoot(TestBalancedTree.java:55)
-    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-    [junit] 
-    [junit] Testcase: testInsertWithoutRebalance took 0 sec
+    [junit] Testcase: testInsertWithoutRebalance took 0.015 sec
     [junit] 	FAILED
     [junit] Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
     [junit] junit.framework.AssertionFailedError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
@@ -475,23 +353,14 @@ test:
     [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
     [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
     [junit] 
-    [junit] Testcase: testInsertWithRebalancing took 0 sec
-    [junit] 	FAILED
-    [junit] Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] junit.framework.AssertionFailedError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
-    [junit] 	at AVLTree.test.TestBalancedTree.testInsertWithRebalancing(TestBalancedTree.java:95)
-    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-    [junit] 
 
 BUILD FAILED
 /Users/puneetsachdeva/cse247-support/build.xml:34: Test AVLTree.test.TestBalancedTree failed
 
-Total time: 0 seconds
+Total time: 1 second
 ================
 Lab is not counted -- failed unit tests
 ================
 
-CSE247 Robot tester ends testing AVLTree on 2018-05-01 17:18:55 -0500
+CSE247 Robot tester ends testing AVLTree on 2018-05-02 14:02:42 -0500
 -------------------
