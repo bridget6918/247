@@ -1,0 +1,244 @@
+-------------------
+CSE247 Robot tester starts testing AVLTree on 2018-05-03 00:22:00 -0500
+
+========
+Testing in ./GradingRepos/repos/cse247-s18-students-bridget.wang: AVLTree as of 2018-04-26 00:05
+========
+Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang
+Your branch is up-to-date with 'origin/master'.
+HEAD is now at d377903 Merge remote-tracking branch 'upstream/master'
+No local changes to save
+
+Updating d377903..be32030
+Fast-forward
+ RoboGrade/AVLTree-test.TestBalancedTree.txt    | 171 +++----------------------
+ labs/AVLTree/test/TestBalancedTree.java        |  36 +++---
+ labs/AVLTree/test/TestBalancedTreePartial.java | 135 +++++++++++++++++++
+ labs/AVLTree/test/TestUnbalancedTree.java      |  19 ---
+ 4 files changed, 173 insertions(+), 188 deletions(-)
+ create mode 100644 labs/AVLTree/test/TestBalancedTreePartial.java
+Going back in time to: 2018-04-26 00:05
+At hash 1b2464524fea5b70d7769dbdccf1c948d21bcf13
+
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+copytest:
+     [echo] would copy from /Users/puneetsachdeva/git/cse247-s18-students key bridget.wang testfilesource test/TestBalancedTreePartial package AVLTree repo ./GradingRepos/repos/cse247-s18-students-bridget.wang
+     [copy] Copying 1 file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/labs/AVLTree/test
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Compiling the code
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/trees/AVLTree
+    [mkdir] Created dir: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/nodes/AVLTreeNode
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/test/TestBalancedTreePartial
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Running test test.TestBalancedTreePartial
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+test:
+    [junit] Running AVLTree.test.TestBalancedTreePartial
+    [junit] Testsuite: AVLTree.test.TestBalancedTreePartial
+    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<58> but was:<null>
+    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec
+    [junit] Output:
+    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<58> but was:<null>
+    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec
+    [junit] ------------- Standard Output ---------------
+    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<58> but was:<null>
+    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] ------------- ---------------- ---------------
+    [junit] 
+    [junit] Testcase: testEmptyHeap took 0.002 sec
+    [junit] Testcase: testInsertRoot took 0.044 sec
+    [junit] 	FAILED
+    [junit] Element was not inserted as the root expected:<58> but was:<null>
+    [junit] junit.framework.AssertionFailedError: Element was not inserted as the root expected:<58> but was:<null>
+    [junit] 	at AVLTree.test.TestBalancedTreePartial.testInsertRoot(TestBalancedTreePartial.java:59)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 
+    [junit] Testcase: testInsertWithoutRebalance took 0.001 sec
+    [junit] 	FAILED
+    [junit] Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] junit.framework.AssertionFailedError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] 	at AVLTree.test.TestBalancedTreePartial.testInsertWithoutRebalance(TestBalancedTreePartial.java:78)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 
+
+BUILD FAILED
+/Users/puneetsachdeva/cse247-support/build.xml:34: Test AVLTree.test.TestBalancedTreePartial failed
+
+Total time: 0 seconds
+========
+Testing in ./GradingRepos/repos/cse247-s18-students-bridget.wang: AVLTree as of 2018-04-29 00:05
+========
+Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang
+Your branch is up-to-date with 'origin/master'.
+HEAD is now at be32030 Merge remote-tracking branch 'upstream/master'
+No local changes to save
+
+Already up-to-date.
+Going back in time to: 2018-04-29 00:05
+At hash eff4bac2d04e61e8eef8dd8f1409333865939992
+
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+copytest:
+     [echo] would copy from /Users/puneetsachdeva/git/cse247-s18-students key bridget.wang testfilesource test/TestBalancedTreePartial package AVLTree repo ./GradingRepos/repos/cse247-s18-students-bridget.wang
+     [copy] Copying 1 file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/labs/AVLTree/test
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Compiling the code
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/trees/AVLTree
+    [mkdir] Created dir: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/nodes/AVLTreeNode
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/test/TestBalancedTreePartial
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-bridget.wang/bin
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Running test test.TestBalancedTreePartial
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+test:
+    [junit] Running AVLTree.test.TestBalancedTreePartial
+    [junit] Testsuite: AVLTree.test.TestBalancedTreePartial
+    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<22> but was:<null>
+    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec
+    [junit] Output:
+    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<22> but was:<null>
+    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] 
+    [junit] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec
+    [junit] ------------- Standard Output ---------------
+    [junit] ===== Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Element was not inserted as the root expected:<22> but was:<null>
+    [junit] ===== End Failure report for testInsertRoot(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] ===== Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] Failure message: java.lang.AssertionError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] ===== End Failure report for testInsertWithoutRebalance(AVLTree.test.TestBalancedTreePartial) ========
+    [junit] 
+    [junit] 
+    [junit] ------------- ---------------- ---------------
+    [junit] 
+    [junit] Testcase: testEmptyHeap took 0.003 sec
+    [junit] Testcase: testInsertRoot took 0.046 sec
+    [junit] 	FAILED
+    [junit] Element was not inserted as the root expected:<22> but was:<null>
+    [junit] junit.framework.AssertionFailedError: Element was not inserted as the root expected:<22> but was:<null>
+    [junit] 	at AVLTree.test.TestBalancedTreePartial.testInsertRoot(TestBalancedTreePartial.java:59)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 
+    [junit] Testcase: testInsertWithoutRebalance took 0 sec
+    [junit] 	FAILED
+    [junit] Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] junit.framework.AssertionFailedError: Could not find element that was just inserted, check your insert and find method: expected:<100> but was:<null>
+    [junit] 	at AVLTree.test.TestBalancedTreePartial.testInsertWithoutRebalance(TestBalancedTreePartial.java:78)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    [junit] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    [junit] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    [junit] 
+
+BUILD FAILED
+/Users/puneetsachdeva/cse247-support/build.xml:34: Test AVLTree.test.TestBalancedTreePartial failed
+
+Total time: 0 seconds
+================
+Lab is not counted -- failed unit tests
+================
+
+CSE247 Robot tester ends testing AVLTree on 2018-05-03 00:22:17 -0500
+-------------------
